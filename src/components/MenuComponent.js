@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
-import { Col, Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap'
+import React from 'react';
+import { Col, Card, CardImg, CardImgOverlay, CardTitle, Row} from 'reactstrap'
 
-class Menu extends Component {
 
-      constructor(props) {
-            super(props);
-      }
+function RenderMenuItem({ dish, onClick }) {
 
-      render() {
+      return (
+            <Card onClick={() => onClick(dish.id)}>
 
-            const menu = this.props.dishes.map((dish) => {
-                  return (
+                  <CardImg src={dish.image} alt={dish.name} width="100%" />
 
-                        <Col key={dish.id} md="5">
-                              <Card onClick={() => this.props.onClick(dish.id)}>
+                  <CardImgOverlay>
+                        <CardTitle >{dish.name}</CardTitle>
+                  </CardImgOverlay>
 
-                                    <CardImg src={dish.image} alt={dish.name} width="100%" />
+            </Card>
+      );
 
-                                    <CardImgOverlay>
-                                          <CardTitle >{dish.name}</CardTitle>
-                                    </CardImgOverlay>
-
-                              </Card>
-                        </Col>
-                  );
-            });
-
-            return (
-                  <div className="container">
-                        <div className="row">
-                              {menu}
-                        </div>
-                  </div>
-
-            );
-      }
 }
 
+function Menu(props) {
+
+      const menu = props.dishes.map((dish)=> {return(
+            <Col md="5">
+            <RenderMenuItem dish={dish} onClick={()=> props.onClick(dish.id)}> </RenderMenuItem> 
+            </Col>
+            
+      )});
+
+      return (
+            <Row>
+                  {menu}
+            </Row>
+
+      );
+}
 export default Menu;
