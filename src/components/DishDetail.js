@@ -8,13 +8,17 @@ class DishDetail extends Component{
             super(props);
       }
 
+      getDate(date){
+            return new  Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(date)));
+      }
+
       render(){
             var dishX = this.props.dish;
 
             if(dishX!=null){
 
                   const comments = dishX.comments.map((com)=> {
-                        return(<li> <b> {com.comment} </b><p>{com.author}  {com.date} </p> </li>
+                        return(<li> <b> {com.comment} </b><p>{com.author} {this.getDate(com.date)} </p> </li>
                         );
             
             });
