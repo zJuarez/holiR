@@ -1,11 +1,9 @@
-.App{
-  color:grey;
-}
 #nav{
-  background-color: aqua;
+  background-color:#512DA8;
 }
-#nav a{
-  color:black;
+
+#nav a.nav-link{
+  font-size: 1.42em;
 }
 
 .jumbotron {
