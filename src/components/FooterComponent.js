@@ -31,7 +31,7 @@ function Footer(props) {
                     </address>
                 </div>
                 <div className="col-12 col-sm-4 align-self-center">
-                    <div className="text-center">
+                    <div className="text-center socials">
                     <a href="http://google.com/+" target="_blank"> <FontAwesomeIcon icon={faGooglePlus}/> </a>
                     <a href="http://facebook.com" target="_blank"> <FontAwesomeIcon icon={faFacebook}/> </a>
                     <a href="http://twitter.com" target="_blank"> <FontAwesomeIcon icon={faTwitter}/> </a>
