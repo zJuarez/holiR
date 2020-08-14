@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUtensils, faPhone, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUtensils, faIdCardAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
     constructor(props) {
@@ -25,9 +25,9 @@ class Header extends Component {
             <div>
                 <Navbar dark expand="md" id="nav">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src={'assets/images/logo.png'} height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto col-md-2" href="/"><img src={'assets/images/logo.png'} height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse className="buttons" isOpen={this.state.isNavOpen} navbar>
+                        <Collapse className="buttons col-md justify-content-end" isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link " to='/home'><FontAwesomeIcon icon={faHome} /> </NavLink>
@@ -39,11 +39,10 @@ class Header extends Component {
                                     <NavLink className="nav-link " to='/menu'><FontAwesomeIcon icon={faUtensils} /> </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to='/contactus'><FontAwesomeIcon icon={faPhone} /></NavLink>
+                                    <NavLink className="nav-link" to='/contactus'><FontAwesomeIcon icon={faIdCardAlt} /></NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
-                        <div className="offset-1"></div>
                     </div>
                 </Navbar>
                 <Jumbotron>
