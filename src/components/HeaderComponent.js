@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Row} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUtensils, faIdCardAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -45,14 +45,14 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Jumbotron>
+                <Jumbotron className="mb-4" >
                     <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
+                        <Row className="justify-content-center"> 
+                            <div className="col-12 col-md-6 text-center">
                                 <h1>Ristorante con Fusion</h1>
-                                <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                                <p className="lead mt-3">We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                             </div>
-                        </div>
+                            </Row>
                     </div>
                 </Jumbotron>
             </div>

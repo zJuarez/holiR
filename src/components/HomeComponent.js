@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle} from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 function RenderCard({item}) {
 
     return(
         <Card>
+          <Link to={item.category?  `/menu/${item.id}` : "/"}>
             <CardImg src={item.image} alt={item.name} />
+          </Link>
             <CardBody>
             <CardTitle>{item.name}</CardTitle>
             {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }

@@ -7,7 +7,7 @@ export const DISHES =
         category: 'mains',
         label:'Hot',
         price:'4.99',
-        featured: true,
+        featured: false,
         description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'                    
         },
         {
@@ -27,7 +27,7 @@ export const DISHES =
         category: 'appetizer',
         label:'New',
         price:'1.99',
-        featured: false,
+        featured: true,
         description:'A quintessential ConFusion experience, is it a vada or is it a donut?'
         },
         {
