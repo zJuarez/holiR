@@ -32,11 +32,11 @@ function Footer(props) {
                 </div>
                 <div className="col-12 col-sm-4 align-self-center">
                     <div className="text-center socials">
-                    <a href="http://google.com/+" target="_blank"> <FontAwesomeIcon icon={faGooglePlus}/> </a>
-                    <a href="http://facebook.com" target="_blank"> <FontAwesomeIcon icon={faFacebook}/> </a>
-                    <a href="http://twitter.com" target="_blank"> <FontAwesomeIcon icon={faTwitter}/> </a>
-                    <a href="http://youtube.com" target="_blank"> <FontAwesomeIcon icon={faYoutube}/> </a>
-                    <a href="http://linkedin.com" target="_blank"> <FontAwesomeIcon icon={faLinkedin}/> </a>
+                    <a href="http://google.com/+" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faGooglePlus}/> </a>
+                    <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faFacebook}/> </a>
+                    <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faTwitter}/> </a>
+                    <a href="http://youtube.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faYoutube}/> </a>
+                    <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faLinkedin}/> </a>
 
                     </div>
                 </div>
