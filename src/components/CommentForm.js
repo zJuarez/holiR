@@ -33,6 +33,7 @@ class CommentForm extends Component {
             console.log('submit button pressed');
             console.log('Current State is: ' + JSON.stringify(values));
             alert('Current State is: ' + JSON.stringify(values));
+            this.props.addComment(this.props.dish.id, values.rating, values.name, values.comment);
       }
 
       render() {
@@ -46,13 +47,15 @@ class CommentForm extends Component {
                                           <Row className="form-group">
                                                 <Label className="col-12" htmlFor="rating" >Rating</Label>
                                                 <Col>
-                                                      <Control.select model=".rating" id="rating" name="rating" className="form-control" >
+                                                      <Control.select model=".rating" id="rating" name="rating" className="form-control" >   
+                                                            <option value=""></option>                     
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
                                                             <option value="4">4</option>
                                                             <option value="5">5</option>
                                                       </Control.select>
+                                                   
                                                 </Col>
                                           </Row>
                                           <Row className="form-group">

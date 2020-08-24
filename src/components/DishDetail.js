@@ -2,6 +2,8 @@ import React from 'react';
 import { CardText, Card, CardBody, CardImg, Col, CardTitle, Row, Breadcrumb, BreadcrumbItem, Button, Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import CommentForm from './CommentForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function getDate(date) {
       return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(date)));
@@ -19,9 +21,34 @@ function RenderDish({ dish }) {
       );
 }
 
-function RenderComments({ comments, dish }) {
+function getStarsHTML(starsNumber){
+
+      var stars = [];
+      const starElement = <FontAwesomeIcon icon={faStar}/>;
+
+      console.log(starsNumber);
+      
+      for(var i=0; i<starsNumber; i++){
+            stars.push(starElement);
+      }
+
+      console.log(stars);
+
+      return stars;
+
+}
+
+function RenderComments({ comments, dish, addComment }) {
+
       let commentsX = comments.map((com) => {
-            return (<li> <b> {com.comment} </b><p>{com.author} {getDate(com.date)} </p> </li>
+
+            let stars = getStarsHTML(parseInt(com.rating));
+
+            return (<li> 
+                        <b> {com.comment} </b>
+                        <div> {stars} </div>
+                        <p>{com.author} {getDate(com.date)} </p> 
+                  </li>
             );
       });
 
@@ -29,7 +56,7 @@ function RenderComments({ comments, dish }) {
                   <div> 
                   <h2 className="my-4"> Comments </h2>
                    <ul> {commentsX}</ul>
-                   <CommentForm dish={dish}/>
+                   <CommentForm dish={dish} addComment = {addComment}/>
                    </div>
             );
 }
@@ -59,7 +86,10 @@ function DishDetail(props) {
                               <RenderDish dish={props.dish} />
                         </Col>
                         <Col md="5">
-                              <RenderComments comments={props.comments} dish = {props.dish}/>
+                              <RenderComments comments={props.comments} 
+                              dish = {props.dish}
+                              addComment = {props.addComment}
+                              />
                         </Col>
                   </Row>
 
