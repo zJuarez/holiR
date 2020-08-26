@@ -1,9 +1,10 @@
 import React from 'react';
-import { CardText, Card, CardBody, CardImg, Col, CardTitle, Row, Breadcrumb, BreadcrumbItem, Button, Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap'
+import { CardText, Card, CardBody, CardImg, Col, CardTitle, Row, Breadcrumb, BreadcrumbItem, Container} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import CommentForm from './CommentForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Loading } from './LoadingComponent';
 
 function getDate(date) {
       return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(date)));
@@ -32,10 +33,7 @@ function getStarsHTML(starsNumber){
             stars.push(starElement);
       }
 
-      console.log(stars);
-
       return stars;
-
 }
 
 function RenderComments({ comments, dish, addComment }) {
@@ -64,9 +62,23 @@ function RenderComments({ comments, dish, addComment }) {
 
 function DishDetail(props) {
 
-      console.log(props.dish);
-
-      if (props.dish != null) {
+      if(props.isLoading) {
+            return(        
+                        <Row className="justify-content-center">
+                              <Loading/>
+                        </Row>
+            );
+      }
+      else if (props.errMess) {
+            return(
+                  <Container>
+                        <Row>
+                              <h4>{props.errMess}</h4>
+                        </Row>
+                  </Container>
+            );
+      }
+      else if (props.dish != null) {
             return (
                   <div> 
                   <div className="row">
