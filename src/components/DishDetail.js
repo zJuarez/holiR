@@ -5,6 +5,7 @@ import CommentForm from './CommentForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Loading } from './LoadingComponent';
+import {baseUrl} from '../shared/baseUrl';
 
 function getDate(date) {
       return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(date)));
@@ -13,7 +14,7 @@ function getDate(date) {
 function RenderDish({ dish }) {
       return (
             <Card className="mb-2">
-                  <CardImg src={dish.image} alt={dish.name} width="100%" />
+                  <CardImg src={baseUrl+dish.image} alt={dish.name} width="100%" />
                   <CardBody>
                         <CardTitle> {dish.name}</CardTitle>
                         <CardText> {dish.description}</CardText>
